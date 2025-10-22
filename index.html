@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soy de IES</title>
+
+  <style>
+    :root{
+      --ies-blue: #00aae4;
+      --text: #ffffff;
+    }
+
+    *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body{
+      height: 100%;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background: var(--ies-blue);
+      color: var(--text);
+    }
+
+    .page{
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .card{
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h1{
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: .5px;
+    }
+
+    .logo{
+      width: min(360px, 70vw);
+      height: auto;
+      margin-inline: auto;
+      display: block;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,.15));
+      border: none;
+      outline: none;
+    }
+
+    p{
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    a{
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .video-wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,.25);
+    }
+
+    .video-wrap iframe,
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .firma {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: white;
+      text-align: center;
+      opacity: 0.85;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(255,255,255,.75);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="titulo">
+      <h1 id="titulo">Soy de IES</h1>
+
+      <img
+        class="logo"
+        src="https://ies21.edu.ar/gremio/branding/logos_nuevos/LOGO_IES_PLANO.png"
+        alt="Logo del IES"
+        loading="lazy"
+      />
+
+      <p>
+        Pagina de <a href="https://www.ies21.edu.ar/" target="_blank" rel="noopener"> IES</a>.
+      </p>
+
+      <h2>Video en Español</h2>
+      <div class="video-wrap" aria-label="Video institucional en español">
+        <iframe
+          src="https://www.youtube.com/embed/MQYKEd1JahY"
+          title="Video IES - Español"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <h2>Video en Ingles</h2>
+      <div class="video-wrap" aria-label="Video institucional en inglés">
+        <video controls preload="metadata" playsinline>
+          <source src="videoingles.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <footer class="firma">
+        <p>Creado por: Tomas Allia</p>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
