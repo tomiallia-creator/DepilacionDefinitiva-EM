@@ -1,147 +1,434 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soy de IES</title>
-
-  <style>
-    :root{
-      --ies-blue: #00aae4;
-      --text: #ffffff;
-    }
-
-    *{ box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body{
-      height: 100%;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
-      background: var(--ies-blue);
-      color: var(--text);
-    }
-
-    .page{
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-    }
-
-    .card{
-      max-width: 900px;
-      width: 100%;
-    }
-
-    h1{
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: .5px;
-    }
-
-    .logo{
-      width: min(360px, 70vw);
-      height: auto;
-      margin-inline: auto;
-      display: block;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,.15));
-      border: none;
-      outline: none;
-    }
-
-    p{
-      font-size: 1.05rem;
-      margin-bottom: 18px;
-    }
-
-    a{
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    h2 {
-      text-align: center;
-      color: white;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-    }
-
-    .video-wrap {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto 20px auto;
-      aspect-ratio: 16 / 9;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 24px rgba(0,0,0,.25);
-    }
-
-    .video-wrap iframe,
-    .video-wrap video {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .firma {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: white;
-      text-align: center;
-      opacity: 0.85;
-    }
-
-    a:focus-visible {
-      outline: 3px solid rgba(255,255,255,.75);
-      outline-offset: 3px;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eliana Medero · Depilación & Cejas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--rose-50:#F9F1F1;--rose-100:#F4E7E7;--blush:#E7C9C9;--beige:#D9B9A3;--ink:#6C6A6A;--accent:#D88996;--warn:#B75A5A;--white:#fff;--shadow:0 10px 30px rgba(0,0,0,.06);--radius:18px}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 600px at -10% 20%,var(--beige) 0%,transparent 60%),radial-gradient(900px 500px at 110% 10%,var(--blush) 0%,transparent 55%),var(--rose-50)}
+.hero{max-width:1100px;margin:32px auto 8px;padding:24px;display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+.logo{width:110px;height:110px;border-radius:999px;background:transparent;box-shadow:none;display:grid;place-items:center;overflow:hidden}
+.logo img{width:92%;height:auto;object-fit:contain}
+.brand h1{margin:0;font-family:"Playfair Display",serif;font-weight:600;letter-spacing:.3px;color:var(--ink);font-size:clamp(22px,3vw,30px)}
+.brand p{margin:4px 0 0;color:#8a8888;font-size:14px}
+.card{max-width:1100px;margin:0 auto 60px;background:var(--rose-100);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+.two{display:grid;grid-template-columns:1.2fr .9fr;gap:22px}
+@media (max-width:920px){.two{grid-template-columns:1fr}}
+h2.section{margin:4px 0 14px;font-family:"Playfair Display",serif;font-weight:600;color:var(--accent);font-size:clamp(18px,2.2vw,22px)}
+label{display:block;font-size:13px;margin-bottom:6px;color:#7d7b7b}
+input[type="text"],select,input[type="date"]{width:100%;border:1px solid #eadede;background:#fff;border-radius:14px;padding:12px 14px;font-size:14px;color:#6d6a6a;outline:none;transition:box-shadow .2s,border-color .2s}
+input[type="text"]:focus,select:focus,input[type="date"]:focus{border-color:var(--beige);box-shadow:0 0 0 4px rgba(217,185,163,.2)}
+select option:disabled{color:#b7a9a9;text-decoration:line-through}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+.muted{font-size:12px;color:#9a9898}
+.cloud-toggle{display:inline-flex;align-items:center;justify-content:center;border:1px solid #eadede;background:rgba(249,241,241,.7);backdrop-filter:saturate(120%);border-radius:999px;padding:9px 14px;font-size:13px;color:#6d6a6a;cursor:pointer;transition:background .2s,transform .06s,border-color .2s,box-shadow .2s}
+.cloud-toggle:hover{background:#fff;transform:translateY(-1px)}
+.cloud-toggle.active{border-color:var(--beige);box-shadow:0 0 0 3px rgba(217,185,163,.18);color:#5a5757}
+.svc-block{margin-top:12px;padding:12px;border-radius:14px;background:#fff;border:1px solid #eadede}
+.svc-block .inline{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.svc-block .inline{grid-template-columns:1fr}}
+.price-tag{margin-top:10px;padding:10px 12px;border-radius:12px;background:#fff;border:1px dashed #e7dada;font-size:13px;color:#6d6a6a;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.price-detail{margin-top:8px;background:#fff;border:1px solid #eadede;border-radius:12px;padding:10px}
+.price-detail .item{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#6d6a6a;padding:6px 0;border-bottom:1px dashed #eee}
+.price-detail .item:last-child{border-bottom:none}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--beige);color:#fff;font-size:12px}
+.slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:780px){.slots{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.slots{grid-template-columns:repeat(2,1fr)}}
+.slot{padding:12px 10px;border-radius:12px;text-align:center;background:#fff;border:1px solid #eadede;cursor:pointer;font-size:14px;transition:transform .08s ease,border-color .2s}
+.slot:hover{transform:translateY(-1px)}
+.slot.active{border-color:var(--beige);box-shadow:0 0 0 3px rgba(217,185,163,.18)}
+.slot.busy{background:#f7ecec;color:var(--warn);border-color:#eed6d6;cursor:not-allowed;font-weight:600;letter-spacing:.4px}
+.no-slots{padding:14px;text-align:center;border-radius:12px;background:#fff;border:1px dashed #e7dede;color:#8b8888;font-size:14px}
+.summary{background:#fff;border:1px solid #eadede;border-radius:16px;padding:16px}
+.summary h3{margin:0 0 10px;font-family:"Playfair Display",serif;color:#6d6a6a;font-size:18px}
+.summary .line{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #eee;font-size:14px}
+.summary .line:last-child{border-bottom:none}
+.btn{margin-top:14px;width:100%;padding:14px 16px;border:none;border-radius:14px;cursor:pointer;background:var(--ink);color:#fff;font-weight:600;font-size:15px;transition:transform .06s ease,opacity .2s}
+.btn:hover{transform:translateY(-1px);opacity:.95}
+.tiny{font-size:11px;color:#a09d9d;text-align:center;margin-top:8px}
+.fade{display:none;opacity:0;transition:opacity .18s ease}
+.fade.show{display:block;opacity:1}
+</style>
 </head>
-
 <body>
-  <main class="page">
-    <section class="card" aria-labelledby="titulo">
-      <h1 id="titulo">Soy de IES</h1>
+<header class="hero">
+  <div class="logo"><img src="logo.png" alt="Eliana Medero Logo"></div>
+  <div class="brand">
+    <h1>Eliana Medero</h1>
+    <p>Depilación · Microblading · Lifting de pestañas y Cejas</p>
+  </div>
+</header>
 
-      <img
-        class="logo"
-        src="https://ies21.edu.ar/gremio/branding/logos_nuevos/LOGO_IES_PLANO.png"
-        alt="Logo del IES"
-        loading="lazy"
-      />
+<main class="card two">
+  <section>
+    <h2 class="section">Reservá tu turno</h2>
 
-      <p>
-        Pagina de <a href="https://www.ies21.edu.ar/" target="_blank" rel="noopener"> IES</a>.
-      </p>
+    <div>
+      <label for="nombre">Nombre y apellido</label>
+      <input id="nombre" type="text">
+    </div>
 
-      <h2>Video en Español</h2>
-      <div class="video-wrap" aria-label="Video institucional en español">
-        <iframe
-          src="https://www.youtube.com/embed/MQYKEd1JahY"
-          title="Video IES - Español"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
+    <div class="svc-block" id="svc1">
+      <div class="inline">
+        <div>
+          <label for="servicio1">Servicio</label>
+          <select id="servicio1"></select>
+        </div>
+        <div id="sub1">
+          <label for="subtipo1">Tipo de depilación</label>
+          <select id="subtipo1"></select>
+        </div>
       </div>
-
-      <h2>Video en Ingles</h2>
-      <div class="video-wrap" aria-label="Video institucional en inglés">
-        <video controls preload="metadata" playsinline>
-          <source src="videoingles.mp4" type="video/mp4">
-        </video>
+      <div id="zonaWrap1" style="margin-top:12px">
+        <div>
+          <label for="cantidad1">Cantidad de zonas</label>
+          <select id="cantidad1"></select>
+        </div>
       </div>
+    </div>
 
-      <footer class="firma">
-        <p>Creado por: Tomas Allia</p>
-      </footer>
+    <div style="margin-top:12px">
+      <button id="btnAdd2" type="button" class="cloud-toggle">Agregar segundo servicio</button>
+    </div>
 
-    </section>
-  </main>
+    <div class="svc-block fade" id="svc2">
+      <div class="inline">
+        <div>
+          <label for="servicio2">Servicio</label>
+          <select id="servicio2"></select>
+        </div>
+        <div id="sub2" style="display:none">
+          <label for="subtipo2">Tipo de depilación</label>
+          <select id="subtipo2"></select>
+        </div>
+      </div>
+      <div id="zonaWrap2" style="display:none;margin-top:12px">
+        <div>
+          <label for="cantidad2">Cantidad de zonas</label>
+          <select id="cantidad2"></select>
+        </div>
+      </div>
+    </div>
+
+    <div id="toggle3wrap" class="fade" style="margin-top:12px">
+      <button id="btnAdd3" type="button" class="cloud-toggle">Agregar tercer servicio</button>
+    </div>
+
+    <div class="svc-block fade" id="svc3">
+      <div class="inline">
+        <div>
+          <label for="servicio3">Servicio</label>
+          <select id="servicio3"></select>
+        </div>
+        <div id="sub3" style="display:none">
+          <label for="subtipo3">Tipo de depilación</label>
+          <select id="subtipo3"></select>
+        </div>
+      </div>
+      <div id="zonaWrap3" style="display:none;margin-top:12px">
+        <div>
+          <label for="cantidad3">Cantidad de zonas</label>
+          <select id="cantidad3"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-tag">
+      <span>Total</span>
+      <strong id="precio" class="pill">$0</strong>
+    </div>
+    <div id="detalle" class="price-detail"></div>
+
+    <div class="row" style="margin-top:16px">
+      <div>
+        <label for="fecha">Elegí el día</label>
+        <input id="fecha" type="date">
+        <p id="msgDia" class="muted" style="margin-top:6px"></p>
+      </div>
+      <div>
+        <label>Elegí la hora</label>
+        <div id="slots" class="slots" style="min-height:52px"></div>
+        <div id="noSlots" class="no-slots" style="display:none">SIN TURNOS DISPONIBLES</div>
+      </div>
+    </div>
+  </section>
+
+  <aside>
+    <h2 class="section">Resumen</h2>
+    <div class="summary">
+      <h3>Tu selección</h3>
+      <div class="line"><span>Cliente</span><strong id="rCliente">—</strong></div>
+      <div class="line"><span>Servicio(s)</span><strong id="rServicios">—</strong></div>
+      <div class="line"><span>Fecha</span><strong id="rFecha">—</strong></div>
+      <div class="line"><span>Hora</span><strong id="rHora">—</strong></div>
+      <div class="line"><span>Total</span><strong id="rTotal">$0</strong></div>
+      <button id="enviar" class="btn">Enviar solicitud</button>
+      <p class="tiny">Te redirigimos a WhatsApp para confirmar.</p>
+    </div>
+  </aside>
+</main>
+
+<script>
+const WHATSAPP_PHONE = "5493541681059";
+const REMOTE_ENDPOINT = "";
+
+const PRICES = {
+  "Microblading": 22000,
+  "Lifting de pestañas": 12000,
+  "Cejas": 8000,
+  "Depilación": {
+    "Depilación con cera": {
+      "Cuerpo completo": 18000, "1 zona": 6000, "2 zonas": 11000, "3 zonas": 15000, "4 zonas": 18000, "5 zonas": 20000, "6 zonas": 22000, "7 zonas": 24000
+    },
+    "Depilación definitiva": {
+      "Cuerpo completo": 35000, "1 zona": 10000, "2 zonas": 18000, "3 zonas": 24000, "4 zonas": 28000, "5 zonas": 32000, "6 zonas": 34000, "7 zonas": 36000
+    }
+  }
+};
+
+const SERVICES_FIRST = ["Depilación","Microblading","Lifting de pestañas","Cejas"];
+const SERVICES_NO_MICRO = ["Depilación","Lifting de pestañas","Cejas"];
+const SUBTIPOS = ["Depilación con cera","Depilación definitiva"];
+const CANTIDADES = ["Cuerpo completo","1 zona","2 zonas","3 zonas","4 zonas","5 zonas","6 zonas","7 zonas"];
+
+const START_HOUR = "09:00";
+const END_HOUR = "19:00";
+const INTERVAL_MIN = 60;
+
+const CERRADOS_SEMANA = [0];
+const DIAS_BLOQUEADOS = [];
+
+const $ = s => document.querySelector(s);
+const hoy = new Date(); hoy.setHours(0,0,0,0);
+$("#fecha").min = toYMD(hoy);
+
+const svcBlocks = [
+  {svc: $("#servicio1"), subWrap: $("#sub1"), subtipo: $("#subtipo1"), zonaWrap: $("#zonaWrap1"), cantidad: $("#cantidad1")},
+  {svc: $("#servicio2"), subWrap: $("#sub2"), subtipo: $("#subtipo2"), zonaWrap: $("#zonaWrap2"), cantidad: $("#cantidad2")},
+  {svc: $("#servicio3"), subWrap: $("#sub3"), subtipo: $("#subtipo3"), zonaWrap: $("#zonaWrap3"), cantidad: $("#cantidad3")}
+];
+
+const btnAdd2 = $("#btnAdd2");
+const btnAdd3 = $("#btnAdd3");
+const toggle3wrap = $("#toggle3wrap");
+const svc2wrap = $("#svc2");
+const svc3wrap = $("#svc3");
+
+let OCUPADOS = {};
+
+initUI();
+loadOccupied().then(()=>renderSlots());
+
+function initUI(){
+  svcBlocks.forEach((b,idx)=>{
+    fill(b.svc, idx===0 ? SERVICES_FIRST : SERVICES_NO_MICRO);
+    fill(b.subtipo, SUBTIPOS);
+    fill(b.cantidad, CANTIDADES);
+    b.svc.addEventListener("change",()=>{handleDepilUI(b); handleServiceDisable(); enforceFirstServiceRules(); calcAndUpdate()});
+    b.subtipo.addEventListener("change",calcAndUpdate);
+    b.cantidad.addEventListener("change",calcAndUpdate);
+  });
+
+  svcBlocks[0].svc.value="Depilación";
+  handleDepilUI(svcBlocks[0]);
+  enforceFirstServiceRules();
+
+  btnAdd2.addEventListener("click",()=>{
+    const turningOn = !svc2wrap.classList.contains("show");
+    svc2wrap.classList.toggle("show", turningOn);
+    btnAdd2.classList.toggle("active", turningOn);
+    if(turningOn){
+      randomizeService(svcBlocks[1]);
+      toggle3wrap.classList.add("show");
+    }else{
+      toggle3wrap.classList.remove("show");
+      svc3wrap.classList.remove("show");
+      btnAdd3.classList.remove("active");
+    }
+    handleServiceDisable(); calcAndUpdate();
+  });
+
+  btnAdd3.addEventListener("click",()=>{
+    const turningOn = !svc3wrap.classList.contains("show");
+    svc3wrap.classList.toggle("show", turningOn);
+    btnAdd3.classList.toggle("active", turningOn);
+    if(turningOn){ randomizeService(svcBlocks[2]) }
+    handleServiceDisable(); calcAndUpdate();
+  });
+
+  $("#nombre").addEventListener("input",calcAndUpdate);
+  $("#fecha").addEventListener("change",()=>{renderSlots();calcAndUpdate()});
+
+  calcAndUpdate();
+  handleServiceDisable();
+}
+
+function fill(sel, arr){sel.innerHTML="";arr.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;sel.appendChild(o)})}
+
+function handleDepilUI(b){
+  const isDep = b.svc.value==="Depilación";
+  b.subWrap.style.display = isDep ? "block" : "none";
+  b.zonaWrap.style.display = isDep ? "block" : "none";
+}
+
+function enforceFirstServiceRules(){
+  const firstIsMicro = svcBlocks[0].svc.value==="Microblading";
+  btnAdd2.style.display = firstIsMicro ? "none" : "inline-flex";
+  if(firstIsMicro){
+    svc2wrap.classList.remove("show");
+    svc3wrap.classList.remove("show");
+    btnAdd2.classList.remove("active");
+    btnAdd3?.classList.remove("active");
+    toggle3wrap.classList.remove("show");
+  }
+}
+
+function chosenServices(){
+  const chosen=[svcBlocks[0].svc.value];
+  if(svc2wrap.classList.contains("show")) chosen.push(svcBlocks[1].svc.value);
+  if(svc3wrap.classList.contains("show")) chosen.push(svcBlocks[2].svc.value);
+  return chosen;
+}
+
+function markOption(op, disabled){
+  const base = op.textContent.replace(/^[-–—]\s+/,'');
+  op.textContent = disabled ? "— " + base : base;
+  op.disabled = disabled;
+}
+
+function handleServiceDisable(){
+  const chosen = chosenServices();
+  svcBlocks.forEach(b=>{
+    const keep = b.svc.value;
+    [...b.svc.options].forEach(op=>{
+      const usedElsewhere = chosen.includes(op.value) && op.value!==keep;
+      markOption(op, usedElsewhere);
+    });
+  });
+}
+
+function randomizeService(block){
+  const idx = svcBlocks.indexOf(block);
+  const base = idx===0 ? SERVICES_FIRST : SERVICES_NO_MICRO;
+  const used = chosenServices();
+  const candidates = base.filter(s=>!used.includes(s));
+  const pick = candidates[Math.floor(Math.random()*candidates.length)] || base.find(s=>!used.includes(s)) || base[0];
+  block.svc.value = pick;
+  handleDepilUI(block);
+}
+
+function serviceLabel(b){
+  if(b.svc.value==="Depilación"){
+    return `Depilación · ${b.subtipo.value} · ${b.cantidad.value}`;
+  }
+  return b.svc.value;
+}
+function servicePrice(b){
+  if(b.svc.value==="Depilación"){
+    const tabla=PRICES["Depilación"][b.subtipo.value]||{};
+    return tabla[b.cantidad.value]||0;
+  }
+  return PRICES[b.svc.value]||0;
+}
+
+function calcAndUpdate(){
+  const cliente=$("#nombre").value.trim();
+  $("#rCliente").textContent = cliente || "—";
+  const active=[svcBlocks[0]];
+  if(svc2wrap.classList.contains("show")) active.push(svcBlocks[1]);
+  if(svc3wrap.classList.contains("show")) active.push(svcBlocks[2]);
+  const labels=[]; let total=0; const items=[];
+  active.forEach(b=>{
+    const lbl=serviceLabel(b); const p=servicePrice(b);
+    labels.push(lbl); total+=p; items.push({lbl,p});
+  });
+  $("#rServicios").textContent = labels.length?labels.join(" + "):"—";
+  $("#precio").textContent = `$${total.toLocaleString("es-AR")}`;
+  $("#rTotal").textContent = `$${total.toLocaleString("es-AR")}`;
+  $("#rFecha").textContent = $("#fecha").value ? formatFechaLindo($("#fecha").value) : "—";
+  renderDetalle(items,total);
+}
+
+function renderDetalle(items,total){
+  const det=$("#detalle");
+  if(!items.length){det.innerHTML="";return}
+  det.innerHTML = items.map(i=>(
+    `<div class="item"><span>${i.lbl}</span><strong>$${i.p.toLocaleString("es-AR")}</strong></div>`
+  )).join("") + `<div class="item"><span><b>Total</b></span><strong><b>$${total.toLocaleString("es-AR")}</b></strong></div>`;
+}
+
+function toYMD(date){const y=date.getFullYear();const m=String(date.getMonth()+1).padStart(2,"0");const d=String(date.getDate()).padStart(2,"0");return `${y}-${m}-${d}`}
+function genHoras(desde,hasta,cada){const out=[];const [h1,m1]=desde.split(":").map(Number);const [h2,m2]=hasta.split(":").map(Number);const s=new Date();s.setHours(h1,m1,0,0);const e=new Date();e.setHours(h2,m2,0,0);for(let t=s;t<=e;t=new Date(t.getTime()+cada*60000)){out.push(`${String(t.getHours()).padStart(2,"0")}:${String(t.getMinutes()).padStart(2,"0")}`)}return out}
+function formatFechaLindo(ymd){const d=new Date(ymd+"T00:00:00");return d.toLocaleDateString("es-AR",{weekday:"long",day:"2-digit",month:"long",year:"numeric"})}
+
+async function loadOccupied(){
+  try{
+    const local=JSON.parse(localStorage.getItem("ocupados_em")||"{}");
+    let remote={};
+    if(REMOTE_ENDPOINT){
+      const r=await fetch(REMOTE_ENDPOINT+"?action=list"); if(r.ok){remote=await r.json()}
+    }
+    OCUPADOS = mergeOcc(remote, local);
+  }catch{OCUPADOS = JSON.parse(localStorage.getItem("ocupados_em")||"{}")}
+}
+
+function mergeOcc(a,b){const out={};[a,b].forEach(o=>{Object.entries(o||{}).forEach(([k,v])=>{out[k]=Array.from(new Set([...(out[k]||[]),...v]))})});return out}
+function persistLocal(){localStorage.setItem("ocupados_em", JSON.stringify(OCUPADOS))}
+async function persistRemote(d,h){if(!REMOTE_ENDPOINT)return; try{await fetch(REMOTE_ENDPOINT+"?action=add&date="+encodeURIComponent(d)+"&time="+encodeURIComponent(h))}catch{}}
+
+function renderSlots(){
+  const slotsEl=$("#slots"), noSlotsEl=$("#noSlots"), msgDiaEl=$("#msgDia");
+  slotsEl.innerHTML=""; noSlotsEl.style.display="none"; msgDiaEl.textContent="";
+  const val=$("#fecha").value;
+  if(!val){noSlotsEl.style.display="block";return}
+  const d=new Date(val+"T00:00:00"); const ymd=toYMD(d);
+  if(CERRADOS_SEMANA.includes(d.getDay())||DIAS_BLOQUEADOS.includes(ymd)){noSlotsEl.style.display="block";msgDiaEl.textContent="Día sin turnos disponibles.";$("#rHora").textContent="—";return}
+  const horas=genHoras(START_HOUR,END_HOUR,INTERVAL_MIN); const ocup=new Set((OCUPADOS[ymd]||[])); let disponibles=0;
+  horas.forEach(h=>{
+    const b=document.createElement("button"); b.type="button"; b.className="slot";
+    if(ocup.has(h)){b.classList.add("busy"); b.textContent="OCUPADO"; b.disabled=true}
+    else{b.textContent=h; disponibles++; b.addEventListener("click",()=>{document.querySelectorAll(".slot.active").forEach(n=>n.classList.remove("active")); b.classList.add("active"); $("#rHora").textContent=h})}
+    slotsEl.appendChild(b);
+  });
+  if(disponibles===0) noSlotsEl.style.display="block";
+}
+
+$("#enviar").addEventListener("click",async ()=>{
+  const d = buildPayload();
+  const faltan = validate(d);
+  if(faltan.length){alert("Completá: "+faltan.join(", "));return}
+  const lines = [
+    "• *Turno Agendado!!🙌🏽*",
+    `• Cliente(a): ${d.cliente}`,
+    `• Servicio(s): ${d.servicios.join(" + ")}`,
+    `• Fecha: ${d.fechaLindo}`,
+    `• Hora: ${d.hora}`,
+    `• Total: $${d.total.toLocaleString("es-AR")}`
+  ];
+  const msg = encodeURIComponent(lines.join("\n"));
+  const ymd=d.fecha, hh=d.hora;
+  OCUPADOS[ymd]=Array.from(new Set([...(OCUPADOS[ymd]||[]), hh]));
+  persistLocal();
+  await persistRemote(ymd,hh);
+  renderSlots();
+  window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`,"_blank");
+});
+
+function buildPayload(){
+  const cliente=$("#nombre").value.trim();
+  const active=[svcBlocks[0]];
+  if(svc2wrap.classList.contains("show")) active.push(svcBlocks[1]);
+  if(svc3wrap.classList.contains("show")) active.push(svcBlocks[2]);
+  const labels=[]; let total=0;
+  active.forEach(b=>{labels.push(serviceLabel(b)); total+=servicePrice(b)});
+  return {cliente,servicios:labels,total,fecha:$("#fecha").value||null,fechaLindo:$("#fecha").value?formatFechaLindo($("#fecha").value):null,hora:($("#rHora").textContent||"—")==="—"?null:$("#rHora").textContent}
+}
+function validate(d){const f=[];if(!d.cliente)f.push("nombre y apellido");if(!d.servicios.length)f.push("servicio");if(!d.fecha)f.push("fecha");if(!d.hora)f.push("hora");return f}
+</script>
 </body>
 </html>
